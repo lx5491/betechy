@@ -1,5 +1,5 @@
 # .always_forget.txt
-# lx5491's easily forgettable LINUX commands, inspired by https://github.com/awdeorio/dotfiles/blob/master/.always_forget.txt
+# lx5491's easily forgettable LINUX commands and shortcuts, inspired by https://github.com/awdeorio/dotfiles/blob/master/.always_forget.txt
 
 # Paths
 lsof                                    # list open files
