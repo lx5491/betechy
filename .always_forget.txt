@@ -30,14 +30,17 @@ top                                     # dynamic view of processes
 htop                                    # fancy version of 'top'
 dstat -am                               # generate system resource statistics, -a for all but memory and -m for memory
 
-# Github
+# Git commit
 git add hello.txt                       # add hello.txt to the commit
 git add -A                              # add all changed files to the commit
 git commit -m "my commit"               # commit with message "my commit"
 git push origin master                  # push 'master' branch to 'origin' repo
+
+# Git undo
 git reset [--soft] HEAD~1               # discard the local commits that are not pushed
 git reset --hard <some_commit>          # discard all the changes and go to the state of <some_commit>
-
+git rm --cached hello.txt               # undo git add to hello.txt, without removing file
+git rm -r --cached <DIR>                # undo git add recursively to <DIR>, without removing files
 
 
 
