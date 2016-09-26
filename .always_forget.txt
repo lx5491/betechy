@@ -16,6 +16,8 @@ cd ..                                   # chagne to the directory up
 cd -                                    # return to the previous directory
 
 # File manipulation
+touch FILE                              # update modification time to NOW
+touch FILE                              # create empty file, if it doesn't exist
 xxd -b hello.txt                        # see hello.txt in binary form
 xxd hello.txt                           # see hello.txt in hexadecimal form
 hexdump -C hello.txt                    # see hello.txt in hexadecimal form, same with xxd 'hello.txt'
