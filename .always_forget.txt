@@ -1,6 +1,14 @@
 # .always_forget.txt
 # lx5491's easily forgettable LINUX commands and shortcuts, inspired by https://github.com/awdeorio/dotfiles/blob/master/.always_forget.txt
 
+# Machines
+hostname                                # name of this computer
+uname                                   # operating system name
+uname -a                                # info about OS, compiler, etc.
+cat /proc/cpuinfo                       # CPU size/features
+cat /proc/meminfo                       # memory size/features
+uptime                                  # time since power on
+
 # Paths
 lsof                                    # list open files
 cd                                      # change to the home directory
