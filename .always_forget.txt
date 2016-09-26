@@ -23,6 +23,7 @@ xxd hello.txt                           # see hello.txt in hexadecimal form
 hexdump -C hello.txt                    # see hello.txt in hexadecimal form, same with xxd 'hello.txt'
 
 # Shell script
+echo $PATH                              # print the variable $PATH
 export PATH=/opt/bin:$PATH              # prepend '/opt/bin' to $PATH
 
 # Vagrant
