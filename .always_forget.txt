@@ -1,0 +1,31 @@
+# .always_forget.txt
+# lx5491's easily forgettable LINUX commands, inspired by https://github.com/awdeorio/dotfiles/blob/master/.always_forget.txt
+
+# Paths
+lsof                                    # list open files
+cd                                      # change to the home directory
+cd ..                                   # chagne to the directory up
+cd -                                    # return to the previous directory
+
+# File manipulation
+xxd -b hello.txt                        # see hello.txt in binary form
+xxd hello.txt                           # see hello.txt in hexadecimal form
+hexdump -C hello.txt                    # see hello.txt in hexadecimal form, same with xxd 'hello.txt'
+
+# Shell script
+export PATH=/opt/bin:$PATH              # prepend '/opt/bin' to $PATH
+
+# Vagrant
+vagrant init ubuntu/trusty64            # initializes a trusty64 vagrant box
+vagrant up                              # start the vagrant machine in the current directory
+vagrant ssh                             # enters the virtual machine in the current directory using ssh
+vagrant halt                            # shut down the machine in the current directory
+vagrant destroy                         # destroy the machine
+vagrant reload                          # 'vagrant halt' and then 'vagrant up'
+
+# System monitoring
+ps                                      # report a snapshot of the current processes
+ps aux                                  # see every process on the system
+top                                     # dynamic view of processes
+htop                                    # fancy version of 'top'
+dstat -am                               # generate system resource statistics, -a for all but memory and -m for memory
