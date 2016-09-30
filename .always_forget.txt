@@ -26,6 +26,7 @@ grep -r SEARCH .                        # recursively search file content
 # Shell script
 echo $PATH                              # print the variable $PATH
 export PATH=/opt/bin:$PATH              # prepend '/opt/bin' to $PATH
+export fname=$1                         # assign the first argument of the shell script to variable $fname
 
 # Vagrant
 vagrant init ubuntu/trusty64            # initializes a trusty64 vagrant box
