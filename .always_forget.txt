@@ -21,6 +21,7 @@ touch FILE                              # create empty file, if it doesn't exist
 xxd -b hello.txt                        # see hello.txt in binary form
 xxd hello.txt                           # see hello.txt in hexadecimal form
 hexdump -C hello.txt                    # see hello.txt in hexadecimal form, same with xxd 'hello.txt'
+grep -r SEARCH .                        # recursively search file content
 
 # Shell script
 echo $PATH                              # print the variable $PATH
