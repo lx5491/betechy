@@ -16,9 +16,12 @@ cd                                      # change to the home directory
 cd ..                                   # chagne to the directory up
 cd -                                    # return to the previous directory
 
-# File manipulation
+# Directory manipulation
+tree -a DIR                             # print all files and directories under DIR in tree structure
 ls                                      # list directory contents
 ls -lah                                 # list directory contents with human readable size, including hidden files
+
+# File manipulation
 touch FILE                              # update modification time to NOW
 touch FILE                              # create empty file, if it doesn't exist
 xxd -b hello.txt                        # see hello.txt in binary form
@@ -43,7 +46,7 @@ yes > FILE                              # quickly generate a big file
 # Shell script
 echo $PATH                              # print the variable $PATH
 export PATH=/opt/bin:$PATH              # prepend '/opt/bin' to $PATH
-export fname=$1                         # assign the first argument of the shell script to variable $fname
+(.sh)export fname=$1                         # assign the first argument of the shell script to variable $fname
 
 # Vagrant
 vagrant init ubuntu/trusty64            # initializes a trusty64 vagrant box
