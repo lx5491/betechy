@@ -8,6 +8,7 @@ uname -a                                # info about OS, compiler, etc.
 cat /proc/cpuinfo                       # CPU size/features
 cat /proc/meminfo                       # memory size/features
 uptime                                  # time since power on
+dpkg-reconfigure tzdata                 # change system time zone through a pink window
 
 # Paths
 lsof                                    # list open files
@@ -16,12 +17,28 @@ cd ..                                   # chagne to the directory up
 cd -                                    # return to the previous directory
 
 # File manipulation
+ls                                      # list directory contents
+ls -lah                                 # list directory contents with human readable size, including hidden files
 touch FILE                              # update modification time to NOW
 touch FILE                              # create empty file, if it doesn't exist
 xxd -b hello.txt                        # see hello.txt in binary form
 xxd hello.txt                           # see hello.txt in hexadecimal form
 hexdump -C hello.txt                    # see hello.txt in hexadecimal form, same with xxd 'hello.txt'
 grep -r SEARCH .                        # recursively search file content
+sort file1 | uniq                       # line-wisely sort file1 and find unique patterns
+sort file1 file2 | uniq                 # union
+sort file1 file2 | uniq -d              # intersection
+sort test | uniq -c                     # frequency analysis
+head FILE                               # see first 10 lines of FILE
+head -n 20 FILE                         # see first 20 lines of FILE
+head -n -2 FILE                         # see every line but the last 2 line of FILE
+tail FILE                               # see last 10 lines of FILE
+tail -n 20 FILE                         # see last 20 lines of FILE
+tail -n +2 FILE                         # see FILE from line 2 to the end
+tail -f FILE                            # monitor FILE for appends
+wc FILE                                 # word, line, character and byte count
+wc -l FILE                              # line count
+yes > FILE                              # quickly generate a big file
 
 # Shell script
 echo $PATH                              # print the variable $PATH
@@ -43,6 +60,18 @@ top                                     # dynamic view of processes
 htop                                    # fancy version of 'top'
 dstat -am                               # generate system resource statistics, -a for all but memory and -m for memory
 
+# Compression
+tar -cjf DIR.tar.bz2 DIR/               # compress directory into tar.bz2 file
+tar -xvjf DIR.tar.bz2                   # decompress directory to current directory
+
+# Math utilities
+bc                                      # open arbitrary precision calculator language, a.k.a calculator
+bc -l                                   # open calculator with pre-defined math routines
+[bc] scale = 5                          # set the precision to be 5 digits after a point
+expr 1 / 2                              # integer only
+let A=1/2                               # integer only
+echo "1 / 2" | bc -l                    # floating point
+
 # Git commit
 git add hello.txt                       # add hello.txt to the commit
 git add -A                              # add all changed files to the commit
@@ -54,6 +83,21 @@ git reset [--soft] HEAD~1               # discard the local commits that are not
 git reset --hard <some_commit>          # discard all the changes and go to the state of <some_commit>
 git rm --cached hello.txt               # undo git add to hello.txt, without removing file
 git rm -r --cached <DIR>                # undo git add recursively to <DIR>, without removing files
+
+# Virtual terminals
+tmux                                    # start a tmux terminal
+tmux new -s NAME                        # start a new tmux terminal with NAME
+tmux a [#]                              # attach to the most recently detached terminal
+tmux ls                                 # list sessions
+tmux kill-session -t NAME               # kill session NAME
+[tmux] Ctr-b d                          # detach
+
+
+
+
+
+
+
 
 
 
