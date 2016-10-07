@@ -98,7 +98,8 @@ tmux kill-session -t NAME               # kill session NAME
 # Shortcuts in zsh("+" means press at the same time, not the button)
 ESC + .                                 # retrieve the last argument of the last command in shell
 ESC + RETURN                            # inserts a literal newline so you can edit longer commands
-
+CTR + U                                 # cut everything before the cursor
+CTR + Y                                 # paste what you cut using "CTR + U"
 
 
 
