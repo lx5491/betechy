@@ -95,10 +95,9 @@ tmux ls                                 # list sessions
 tmux kill-session -t NAME               # kill session NAME
 [tmux] Ctr-b d                          # detach
 
-
-
-
-
+# Shortcuts in zsh("+" means press at the same time, not the button)
+ESC + .                                 # retrieve the last argument of the last command in shell
+ESC + RETURN                            # inserts a literal newline so you can edit longer commands
 
 
 
