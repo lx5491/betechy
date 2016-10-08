@@ -86,6 +86,7 @@ git reset [--soft] HEAD~1               # discard the local commits that are not
 git reset --hard <some_commit>          # discard all the changes and go to the state of <some_commit>
 git rm --cached hello.txt               # undo git add to hello.txt, without removing file
 git rm -r --cached <DIR>                # undo git add recursively to <DIR>, without removing files
+git commit --amend                      # change commit message in a text editor if not pushed (e.g. vim)
 
 # Git branch
 git branch BRANCH_NAME                  # create a new branch locally called BRANCH_NAME
