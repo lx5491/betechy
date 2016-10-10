@@ -9,6 +9,7 @@ cat /proc/cpuinfo                       # CPU size/features
 cat /proc/meminfo                       # memory size/features
 uptime                                  # time since power on
 dpkg-reconfigure tzdata                 # change system time zone through a pink window
+ntpdate ntp.ubuntu.com                  # update system time to Internet time
 
 # Paths
 lsof                                    # list open files
