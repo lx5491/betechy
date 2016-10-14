@@ -48,6 +48,7 @@ yes > FILE                              # quickly generate a big file
 echo $PATH                              # print the variable $PATH
 export PATH=/opt/bin:$PATH              # prepend '/opt/bin' to $PATH
 (.sh)export fname=$1                    # assign the first argument of the shell script to variable $fname
+alias lm='ls -lah'                       # set alias for command 'ls -lah' to be lm
 
 # Vagrant
 vagrant init ubuntu/trusty64            # initializes a trusty64 vagrant box
@@ -96,6 +97,9 @@ git branch -l                           # list all the local branches
 git merge BRANCH_NAME                   # locally merge branch BRANCH_NAME to the current branch
 git branch -d BRANCH_NAME               # locally delete BRANCH_NAME
 git push origin --delete REMOTE_BRANCH  # delete remote branch
+
+# Git others
+git config --global alias.co checkout   # set git command aliases for checkout
 
 # Virtual terminals
 tmux                                    # start a tmux terminal
