@@ -11,6 +11,14 @@ uptime                                  # time since power on
 dpkg-reconfigure tzdata                 # change system time zone through a pink window
 ntpdate ntp.ubuntu.com                  # update system time to Internet time
 
+# System monitoring
+ps                                      # report a snapshot of the current processes
+ps aux                                  # see every process on the system
+top                                     # dynamic view of processes
+htop                                    # fancy version of 'top'
+dstat -am                               # generate system resource statistics, -a for all but memory and -m for memory
+vmstat 1                                # print key statistics of the machine every 1 sec
+
 # Paths
 lsof                                    # list open files
 cd                                      # change to the home directory
@@ -21,6 +29,17 @@ cd -                                    # return to the previous directory
 tree -a DIR                             # print all files and directories under DIR in tree structure
 ls                                      # list directory contents
 ls -lah                                 # list directory contents with human readable size, including hidden files
+
+# File permission
+chmod xxx FILE                          # change permission for FILE to xxx (x means a digit from 0 to 7)
+    * the 3 digits mean permissions for owner, group and others
+    * 4 -- read(r)
+    * 2 -- write(w)
+    * 1 -- execute(x)
+chmod u+r FILE                          # add read permission of FILE for owner
+chmod g+w FILE                          # add write permission of FILE for group
+chmod o+x FILE                          # add execution permission of FILE for others
+chmod a-w FILE                          # remove write execution permission of FILE for all
 
 # File manipulation
 touch FILE                              # update modification time to NOW
@@ -45,10 +64,13 @@ wc -l FILE                              # line count
 yes > FILE                              # quickly generate a big file
 
 # Shell script
+#!/bin/bash                             # write as the first line
+set -e                                  # write this before all statements to make sure the shell exits immediately when any statement returns with a non-zero status
+set -x                                  # write this to print each command when running them, with variables replaced with its real value
 echo $PATH                              # print the variable $PATH
 export PATH=/opt/bin:$PATH              # prepend '/opt/bin' to $PATH
 (.sh)export fname=$1                    # assign the first argument of the shell script to variable $fname
-alias lm='ls -lah'                       # set alias for command 'ls -lah' to be lm
+alias lm='ls -lah'                      # set alias for command 'ls -lah' to be lm
 
 # Vagrant
 vagrant init ubuntu/trusty64            # initializes a trusty64 vagrant box
@@ -57,13 +79,6 @@ vagrant ssh                             # enters the virtual machine in the curr
 vagrant halt                            # shut down the machine in the current directory
 vagrant destroy                         # destroy the machine
 vagrant reload                          # 'vagrant halt' and then 'vagrant up'
-
-# System monitoring
-ps                                      # report a snapshot of the current processes
-ps aux                                  # see every process on the system
-top                                     # dynamic view of processes
-htop                                    # fancy version of 'top'
-dstat -am                               # generate system resource statistics, -a for all but memory and -m for memory
 
 # Compression
 tar -cjf DIR.tar.bz2 DIR/               # compress directory into tar.bz2 file
