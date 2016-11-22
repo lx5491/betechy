@@ -130,7 +130,11 @@ ESC + RETURN                            # inserts a literal newline so you can e
 CTR + U                                 # cut everything before the cursor
 CTR + Y                                 # paste what you cut using "CTR + U"
 
-
+# SSH
+In ~/.ssh/config, set up a shortcut hostname for a remote server:
+    Host umich
+        HostName login.engin.umich.edu
+        User simonxl
 
 
 
