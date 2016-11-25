@@ -85,6 +85,10 @@ find . -type TYPE                       # find all the files or direcotories wit
     * l -- symbolic link
     * s -- socket
 
+# awk
+awk '/abc/ {print $0}' FILE             # print lines containing the word "abc" in FILE
+awk 'length($0) > 80' FILE              # print lines whose lengths are greater than 80 characters
+
 # Shell script
 #!/bin/bash                             # write as the first line
 set -e                                  # write this before all statements to make sure the shell exits immediately when any statement returns with a non-zero status
