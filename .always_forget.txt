@@ -63,6 +63,28 @@ wc FILE                                 # word, line, character and byte count
 wc -l FILE                              # line count
 yes > FILE                              # quickly generate a big file
 
+# File manipulation -- find
+find /dir -name "pattern"               # find files or directories with "pattern" names under the /dir directory (filename can use *)
+find . -name "*.cpp"                    # find all ".cpp" files under the current dir
+find . -path "./eecs482*"               # find all files or directories with pathnames starting with "./eecs482"
+                                        # note that pathname is absolute pathname if the starting point is also absolute,
+                                        # and pathname is relative pathname if the starting point is also relative
+find . -perm 755                        # find all files with permission 755 under the current dir
+find [path] [conditions to prune] -prune -o [your usual conditions] [actions to perform]
+                                        # prune output by removing files with matching conditions
+find . -path "./eecs482/p3" -prune -o -name "*.cpp" -print
+                                        # find all the ".cpp" files under the current dir except for those under "./
+                                        # eecs482/p3" (yes, it not only prunes p3 but all files and directories under it)
+find . -type TYPE                       # find all the files or direcotories with the type TYPE under current dir
+    Different types:
+    * b -- block (buffered) special
+    * c -- character (unbuffered) special
+    * d -- directory
+    * p -- named pipe (FIFO)
+    * f -- regular file
+    * l -- symbolic link
+    * s -- socket
+
 # Shell script
 #!/bin/bash                             # write as the first line
 set -e                                  # write this before all statements to make sure the shell exits immediately when any statement returns with a non-zero status
