@@ -42,6 +42,8 @@ chmod o+x FILE                          # add execution permission of FILE for o
 chmod a-w FILE                          # remove write execution permission of FILE for all
 
 # File manipulation
+cut -c2 FILE.txt                        # print 2nd character of each line
+cut -c1-3 FILE.txt                      # print 1st to 3rd characters of each line
 touch FILE                              # update modification time to NOW
 touch FILE                              # create empty file, if it doesn't exist
 xxd -b hello.txt                        # see hello.txt in binary form
@@ -87,7 +89,11 @@ find . -type TYPE                       # find all the files or direcotories wit
 
 # awk
 awk '/abc/ {print $0}' FILE             # print lines containing the word "abc" in FILE
-awk 'length($0) > 80' FILE              # print lines whose lengths are greater than 80 characters
+awk '{print $5}' FILE                   # print the 5th field (column) of FILE (separated by spaces and tabs)
+awk 'BEGIN { FS = "," }; { print $2 }' FILE # print the 2nd field (column) of FILE, with field separtor being ","
+awk 'length($0) > 80 {print $0}' FILE   # print lines whose lengths are greater than 80 characters
+awk '{print $NF}' FILE                  # print the last field (column) of each line in FILE
+awk '{print length}' FILE               # print length of each line in FILE
 
 # Shell script
 #!/bin/bash                             # write as the first line
