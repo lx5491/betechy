@@ -152,6 +152,10 @@ git push origin --delete REMOTE_BRANCH  # delete remote branch
 
 # Git others
 git config --global alias.co checkout   # set git command aliases for checkout
+git rebase -i HEAD~3                    # Edit/squash the last 3 commits in an interactive mode
+    Modes: p is pick this commit
+           s is squash the commit into the previous commit
+           r is the reword the commit
 
 # Virtual terminals
 tmux                                    # start a tmux terminal
