@@ -136,6 +136,7 @@ git commit -m "my commit"               # commit with message "my commit"
 git push origin master                  # push 'master' branch to 'origin' repo
 
 # Git undo
+git reset HEAD FILE                     # unstage the added FILE
 git reset [--soft] HEAD~1               # discard the local commits that are not pushed
 git reset --hard <some_commit>          # discard all the changes and go to the state of <some_commit>
 git rm --cached hello.txt               # undo git add to hello.txt, without removing file
@@ -177,7 +178,9 @@ In ~/.ssh/config, set up a shortcut hostname for a remote server:
         HostName login.engin.umich.edu
         User simonxl
 
-
+# Docker
+docker ps                               # List containers
+docker rm ID                            # remove container(s) by ID
 
 
 
