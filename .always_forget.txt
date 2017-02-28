@@ -181,9 +181,15 @@ In ~/.ssh/config, set up a shortcut hostname for a remote server:
 # Docker
 docker ps                               # List containers
 docker rm ID                            # remove container(s) by ID
+docker pull <URI>                   
+docker build .
+docker build -t some-image .
+docker create <image_hash>              # create a container and show the container hash
+docker start <>                         # start the container
+docker run --rm -it <image_hash>        # create and start a new container
+docker rm -fv <container_hash>          # force remove container
 
-
-
+xargs                                   # build and execute command lines from standard input
 
 
 
