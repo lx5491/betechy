@@ -1,0 +1,22 @@
+Creating a pull request
+-----------------------
+git checkout master
+git pull --rebase
+git checkout feature-branch
+git rebase -i master # squash, pick top and squash the rest
+git push origin +feature-branch
+
+Merge approved PR
+-----------------
+git checkout master
+git pull --rebase
+git checkout feature-branch
+git rebase master
+git checkout master
+git merge --ff-only feature-branch
+git push
+
+If need to close PR
+-------------------
+git checkout feature-branch
+git push -f origin feature-branch
