@@ -185,7 +185,7 @@ In ~/.ssh/config, set up a shortcut hostname for a remote server:
         User simonxl
 
 # Docker
-docker ps                               # List containers
+docker ps                               # list containers
 docker rm ID                            # remove container(s) by ID
 docker pull <URI>                   
 docker build .
@@ -197,6 +197,8 @@ docker rm -fv <container_hash>          # force remove container
 
 xargs                                   # build and execute command lines from standard input
 
+# Misc
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start   # start postgres server on Mac
 
 
 
