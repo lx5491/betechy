@@ -1,0 +1,14 @@
+# start postgres server on Mac
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+
+# Use RMN Http Client
+rmn-http-client -a RMN1_HMAC_SHA256 -c MEMBERS_API <secret_key> -H "Content-Type:application/json" -H "Cookie:user[userId]=21735985; user[sessionId]=54f59c81-a73e-48ca-9bd4-59ba488226d8;" -X DELETE -j https://rmnwebapi-test.wsmeco.com/v1/haros/me
+
+# AWS
+aws cloudwatch --region us-west-2 --profile grj-dev describe-alarms --alarm-names "rwd-mem-api-tst-sw2 ELB Latency"
+
+aws cloudwatch --region us-west-2 --profile grj put-metric-alarm --alarm-name "rwd-mem-api-prd-sw2 ELB Latency" --alarm-description "rwd-mem-api-prd-sw2 ELB latency high" --metric-name Latency --namespace "AWS/ELB" --period 600 --evaluation-periods 6 --threshold 0.5 --comparison-operator "GreaterThanOrEqualToThreshold" --statistic Average --alarm-actions arn:aws:sns:us-west-2:988769437077:rwd-mem-api-prd-sw2-SnsEmailNotification-L83WHR1AW3CR --ok-actions  --dimensions "Name=LoadBalancerName,Value=rwd-mem-api-prd-sw2"
+
+#RmnQL
+AWS_PROFILE=eng make build
+AWS_PROFILE=grj-dev ENV=tst make package
